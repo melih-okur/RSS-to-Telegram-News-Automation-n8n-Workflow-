@@ -1,6 +1,6 @@
 # 📡 RSS to Telegram Automation (n8n Workflow)
 
-🌐 **Language Selection:** [Türkçe](README.md) | [English](README.en.md)
+🌐 **Language Selection:** [Türkçe](BENİOKU.md) | [English](README.md)
 ---
 
 This n8n workflow dynamically collects real-time news from multiple RSS feeds. The content is automatically delivered to your Telegram group or channel via a dedicated bot, ensuring your audience receives consistent and automated news updates.
