@@ -1,16 +1,10 @@
-# 📡 RSS to Telegram Automation (n8n Workflow)
-
-Bu proje, **n8n** kullanarak birden fazla RSS kaynağından haberleri toplayıp **Telegram bot** üzerinden otomatik olarak paylaşan bir workflow içerir.  
-Amaç: Belirli aralıklarla güncellenen haberleri, otomatik ve düzenli bir şekilde Telegram grubuna/kanalına iletmektir.
-
----
 # 📡 RSS to Telegram Otomasyonu (n8n Workflow)
 
 🌐 **Dil Seçimi:** [Türkçe](README.md) | [English](README.en.md)
-
 ---
 
-Bu proje, **n8n** otomasyon platformunu kullanarak birden fazla RSS kaynağından haberleri toplayıp bir **Telegram botu** aracılığıyla otomatik olarak paylaşır.
+Bu proje, **n8n** kullanarak birden fazla RSS kaynağından haberleri toplayıp **Telegram bot** üzerinden otomatik olarak paylaşan bir workflow içerir.  
+Amaç: Belirli aralıklarla güncellenen haberleri, otomatik ve düzenli bir şekilde Telegram grubuna/kanalına iletmektir.
 
 ...
 
