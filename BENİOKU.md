@@ -44,9 +44,7 @@ Amaç: Belirli aralıklarla güncellenen haberleri, otomatik ve düzenli bir şe
    - Oluşturduğunuz botunuzu kanalınıza "yönetici" yetkisiyle ekleyin ve izinleri onaylayın. 
    - `Chat ID`’ni bulmak için:
      - Oluşturduğunuz gruba herhangi bir mesaj yazın ardından
-     - 
      `https://api.telegram.org/bot<TOKEN>/getUpdates`
-
      - TOKEN yazan bölüme @BotFather tarafından gönderilen Tokeninizi yazın.
    - Açılan sayfada, mesajın detaylarını içeren bir JSON çıktısı göreceksiniz. Burada chat objesini bulun. Bu objenin içindeki id değeri, aradığınız Chat ID'dir.
    - Oluşturduğunuz botunuzu kanalınıza "yönetici" yetkisiyle ekleyin ve izinleri onaylayın.
