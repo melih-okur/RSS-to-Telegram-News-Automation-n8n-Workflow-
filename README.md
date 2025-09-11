@@ -28,7 +28,7 @@ This n8n workflow dynamically collects real-time news from multiple RSS feeds. T
 
 1.  **Download the project**
     
-    [Click to download](https://drive.usercontent.google.com/u/0/uc?id=1Swuaw-etASp2KgeeVL1HQ--QGfAKf4c8&export=download)
+     [⬇️ İndirmek için tıkla](https://drive.usercontent.google.com/u/0/uc?id=1Swuaw-etASp2KgeeVL1HQ--QGfAKf4c8&export=download)
 
 3.  **Install and run n8n**
     - Follow the [official documentation](https://docs.n8n.io/hosting/) for installation.
