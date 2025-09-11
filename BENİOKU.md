@@ -23,7 +23,7 @@ Amaç: Belirli aralıklarla güncellenen haberleri, otomatik ve düzenli bir şe
 ## 🛠️ Kullanılan Teknolojiler
 - [n8n](https://n8n.io/) – Otomasyon platformu
 - [Telegram Bot API](https://core.telegram.org/bots/api) – Haber gönderimi için
-- RSS Feed kaynakları  [RSS LİSTESİ](https://bakinazik.github.io/rss/)
+- RSS Feed kaynakları
 
 ---
 
@@ -39,12 +39,18 @@ Amaç: Belirli aralıklarla güncellenen haberleri, otomatik ve düzenli bir şe
    - n8n arayüzünden `telegram_news_bot.json` dosyasını **Import Workflow** ile içe aktar.
 
 4. **Telegram Bot oluştur**  
-   - Telegram’da [@BotFather](https://t.me/BotFather) üzerinden yeni bot oluştur.  
-   - Token’ı alıp n8n credentials bölümüne ekle.  
-   - `Chat ID`’ni bulmak için `https://api.telegram.org/bot<TOKEN>/getUpdates` kullan.
+   - Telegram’da [@BotFather](https://t.me/BotFather) üzerinden /newbot komutu ile yeni bot oluştur.  
+   - Token’ı (API) alıp n8n credentials bölümüne ekle.  
+   - `Chat ID`’ni bulmak için` kullan.
+   '''bash
+    https://api.telegram.org/bot<TOKEN>/getUpdates
+   '''
+
+   - Oluşturduğunuz botunuzu kanalınıza "yönetici" yetkisiyle ekleyin ve izinleri onaylayın.
 
 5. **RSS kaynaklarını ekle**  
-   - `RSS 1`, `RSS 2` node’larının içine RSS URL’lerini gir.  
+   - `RSS 1`, `RSS 2` node’larının içine RSS URL’lerini gir.
+   - [RSS LİSTESİ](https://bakinazik.github.io/rss/)
    - Gerekirse ek RSS kaynakları için yeni (RSS READ) node ekle.
 
 6. **Workflow’u çalıştır**  
@@ -53,7 +59,7 @@ Amaç: Belirli aralıklarla güncellenen haberleri, otomatik ve düzenli bir şe
 
 ---
 
-## 📸 Örnek Çalışma
+## 📸 Diyagram Görseli
 ![Workflow Diyagramı](docs/workflow-diagram.png)
 
 ---
