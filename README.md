@@ -7,6 +7,7 @@ Bu proje, **n8n** kullanarak birden fazla RSS kaynağından haberleri toplayıp 
 Amaç: Belirli aralıklarla güncellenen haberleri, otomatik ve düzenli bir şekilde Telegram grubuna/kanalına iletmektir.
 
 
+---
 
 ## 🚀 Özellikler
 - Birden fazla RSS kaynağını destekler
