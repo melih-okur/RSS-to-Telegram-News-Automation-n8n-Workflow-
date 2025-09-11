@@ -1,9 +1,12 @@
 # 📡 RSS to Telegram Automation (n8n Workflow)
 
-This project contains a workflow built with **n8n** that collects news from multiple RSS feeds and automatically shares them through a **Telegram bot**.  
-Goal: Deliver regularly updated news automatically to a Telegram group/channel.
+🌐 **Language Selection:** [Türkçe](README.md) | [English](README.en.md)
 
 ---
+
+This project contains a workflow built with **n8n** that collects news from multiple RSS feeds and automatically shares them through a **Telegram bot**.
+
+...
 
 ## 🚀 Features
 - Supports multiple RSS feeds
