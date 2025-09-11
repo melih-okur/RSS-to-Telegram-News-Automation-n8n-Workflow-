@@ -25,7 +25,7 @@ Amaç: Belirli aralıklarla güncellenen haberleri, otomatik ve düzenli bir şe
 
 1. **Projeyi indir**
    
-   (https://drive.google.com/file/d/1Swuaw-etASp2KgeeVL1HQ--QGfAKf4c8/view?usp=sharing)
+   [İndirmek için tıkla](https://drive.google.com/file/d/1Swuaw-etASp2KgeeVL1HQ--QGfAKf4c8/view?usp=sharing)
 
 
 3. **n8n’i kur ve başlat**  
