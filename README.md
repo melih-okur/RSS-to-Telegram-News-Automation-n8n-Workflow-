@@ -24,24 +24,24 @@ Amaç: Belirli aralıklarla güncellenen haberleri, otomatik ve düzenli bir şe
 ## 🔧 Kurulum ve Kullanım
 
 1. **Projeyi indir**
-   ```bash
-   https://drive.google.com/file/d/1Swuaw-etASp2KgeeVL1HQ--QGfAKf4c8/view?usp=sharing
-   ```
+   
+   (https://drive.google.com/file/d/1Swuaw-etASp2KgeeVL1HQ--QGfAKf4c8/view?usp=sharing)
 
-2. **n8n’i kur ve başlat**  
+
+3. **n8n’i kur ve başlat**  
    - [Resmi doküman](https://docs.n8n.io/hosting/) üzerinden kurulumu yap.  
    - n8n arayüzünden `workflow.json` dosyasını **Import Workflow** ile içe aktar.
 
-3. **Telegram Bot oluştur**  
+4. **Telegram Bot oluştur**  
    - Telegram’da [@BotFather](https://t.me/BotFather) üzerinden yeni bot oluştur.  
    - Token’ı alıp n8n credentials bölümüne ekle.  
    - `Chat ID`’ni bulmak için `https://api.telegram.org/bot<TOKEN>/getUpdates` kullan.
 
-4. **RSS kaynaklarını ekle**  
+5. **RSS kaynaklarını ekle**  
    - `RSS 1`, `RSS 2` node’larının içine RSS URL’lerini gir.  
    - Gerekirse ek RSS kaynakları için yeni node ekle.
 
-5. **Workflow’u çalıştır**  
+6. **Workflow’u çalıştır**  
    - Scheduler otomatik olarak her 10 dakikada bir tetiklenecek.  
    - Haberler duplicate check’ten geçecek ve Telegram’a iletilecek.
 
