@@ -8,16 +8,18 @@ Amaç: Belirli aralıklarla güncellenen haberleri, otomatik ve düzenli bir şe
 ## 🚀 Özellikler
 - Birden fazla RSS kaynağını destekler
 - Tekrarlayan haberleri filtreler (duplicate check)
-- Her 10 dakikada bir otomatik çalışır (Scheduler)
+- Her 3 dakikada bir otomatik çalışır (Scheduler)
 - Haberleri Telegram'a resim + başlık + özet olarak gönderir
 - Kolay özelleştirilebilir
+- Yeni RSS kaynakları veya farklı mesaj formatları eklenebilir.
+
 
 ---
 
 ## 🛠️ Kullanılan Teknolojiler
 - [n8n](https://n8n.io/) – Otomasyon platformu
 - [Telegram Bot API](https://core.telegram.org/bots/api) – Haber gönderimi için
-- RSS Feed kaynakları
+- RSS Feed kaynakları  [RSS LİSTESİ](https://bakinazik.github.io/rss/)
 
 ---
 
@@ -39,7 +41,7 @@ Amaç: Belirli aralıklarla güncellenen haberleri, otomatik ve düzenli bir şe
 
 5. **RSS kaynaklarını ekle**  
    - `RSS 1`, `RSS 2` node’larının içine RSS URL’lerini gir.  
-   - Gerekirse ek RSS kaynakları için yeni node ekle.
+   - Gerekirse ek RSS kaynakları için yeni (RSS READ) node ekle.
 
 6. **Workflow’u çalıştır**  
    - Scheduler otomatik olarak her 10 dakikada bir tetiklenecek.  
@@ -54,7 +56,6 @@ Amaç: Belirli aralıklarla güncellenen haberleri, otomatik ve düzenli bir şe
 
 ## 🤝 Katkıda Bulunma
 Katkı sağlamak için projeyi fork edip Pull Request açabilirsiniz.  
-Yeni RSS kaynakları veya farklı mesaj formatları eklenebilir.
 
 ---
 
