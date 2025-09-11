@@ -36,7 +36,7 @@ Amaç: Belirli aralıklarla güncellenen haberleri, otomatik ve düzenli bir şe
 
 3. **n8n’i kur ve başlat**  
    - [Resmi doküman](https://docs.n8n.io/hosting/) üzerinden kurulumu yap.  
-   - n8n arayüzünden `workflow.json` dosyasını **Import Workflow** ile içe aktar.
+   - n8n arayüzünden `telegram_news_bot.json` dosyasını **Import Workflow** ile içe aktar.
 
 4. **Telegram Bot oluştur**  
    - Telegram’da [@BotFather](https://t.me/BotFather) üzerinden yeni bot oluştur.  
