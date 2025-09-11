@@ -40,20 +40,21 @@ Amaç: Belirli aralıklarla güncellenen haberleri, otomatik ve düzenli bir şe
 
 4. **Telegram Bot oluştur**  
    - Telegram’da [@BotFather](https://t.me/BotFather) üzerinden /newbot komutu ile yeni bot oluştur.  
-   - Token’ı (API) alıp n8n credentials bölümüne ekle.  
-   - `Chat ID`’ni bulmak için` kullan.
-   '''bash
-    https://api.telegram.org/bot<TOKEN>/getUpdates
-   '''
-
+   - Token’ı (API) alıp n8n credentials bölümüne ekle.
+   - Oluşturduğunuz botunuzu kanalınıza "yönetici" yetkisiyle ekleyin ve izinleri onaylayın. 
+   - `Chat ID`’ni bulmak için:
+     - Oluşturduğunuz gruba herhangi bir mesaj yazın ardından
+     `https://api.telegram.org/bot<TOKEN>/getUpdates`
+     - <TOKEN> yazan bölüme @BotFather tarafından gönderilen Tokeninizi yazın.
+   - Açılan sayfada, mesajın detaylarını içeren bir JSON çıktısı göreceksiniz. Burada chat objesini bulun. Bu objenin içindeki id değeri, aradığınız Chat ID'dir.
    - Oluşturduğunuz botunuzu kanalınıza "yönetici" yetkisiyle ekleyin ve izinleri onaylayın.
 
-5. **RSS kaynaklarını ekle**  
+6. **RSS kaynaklarını ekle**  
    - `RSS 1`, `RSS 2` node’larının içine RSS URL’lerini gir.
    - [RSS LİSTESİ](https://bakinazik.github.io/rss/)
    - Gerekirse ek RSS kaynakları için yeni (RSS READ) node ekle.
 
-6. **Workflow’u çalıştır**  
+7. **Workflow’u çalıştır**  
    - Scheduler otomatik olarak her 10 dakikada bir tetiklenecek.  
    - Haberler duplicate check’ten geçecek ve Telegram’a iletilecek.
 
