@@ -1,0 +1,13 @@
+{
+  "telegram": {
+    "bot_token": "YOUR_TELEGRAM_BOT_TOKEN",
+    "chat_id": "YOUR_CHAT_ID"
+  },
+  "rss_feeds": [
+    "https://example.com/rss1.xml",
+    "https://example.com/rss2.xml"
+  ],
+  "scheduler": {
+    "interval_minutes": 10
+  }
+}
