@@ -33,7 +33,7 @@ This n8n workflow dynamically collects real-time news from multiple RSS feeds. T
 
 3.  **Install and run n8n**
     - Follow the [official documentation](https://docs.n8n.io/hosting/) for installation.
-    - Import the `workflow.json` file via the **Import Workflow** option in the n8n interface.
+    - Import the `telegram_news_bot.json` file via the **Import Workflow** option in the n8n interface.
 
 4.  **Create a Telegram Bot**
     - Create a new bot on Telegram via [@BotFather](https://t.me/BotFather).
