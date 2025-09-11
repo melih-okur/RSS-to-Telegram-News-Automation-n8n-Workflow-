@@ -1,0 +1,256 @@
+{
+  "name": "My workflow 4",
+  "nodes": [
+    {
+      "parameters": {
+        "triggerTimes": {
+          "item": [
+            {
+              "mode": "everyX",
+              "value": 10,
+              "unit": "minutes"
+            }
+          ]
+        }
+      },
+      "name": "Scheduler",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [
+        -3536,
+        112
+      ],
+      "id": "cec1dbd0-5e6b-44ec-9bb5-60075385d104"
+    },
+    {
+      "parameters": {
+        "functionCode": "// Get global static data for duplicate prevention\nconst staticData = this.getWorkflowStaticData('global');\nstaticData.sentLinks = staticData.sentLinks || [];\n\n// Filter out duplicate news items\nitems = items.filter(item => {\n  if (staticData.sentLinks.includes(item.json.link)) {\n    return false; // Already sent\n  }\n  staticData.sentLinks.push(item.json.link); // Save new link\n  return true;\n});\n\nreturn items;"
+      },
+      "name": "Duplicate Check",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        -2032,
+        112
+      ],
+      "id": "4763dd73-b564-4fbc-9ea2-e3a8620310ae"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        -2512,
+        112
+      ],
+      "id": "b2d07acf-4599-4963-afb0-651407499d83",
+      "name": "News Merger"
+    },
+    {
+      "parameters": {
+        "operation": "sendPhoto",
+        "chatId": "YOUR_CHAT_ID",
+        "file": "={PHOTO_URL}",
+        "additionalFields": {
+          "caption": "{TİTLE}    {TEXT}"
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -1568,
+        112
+      ],
+      "id": "fbd32b96-630e-454c-851f-ceaf24e20aca",
+      "name": "Send to Telegram",
+      "webhookId": "4be9707f-51d0-45ec-8ab6-a2700efcc1b5",
+      "credentials": {
+        "telegramApi": {
+          "id": "g6Ty4yvbMmZOPFYl",
+          "name": "Telegram account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "\n\n\n## 🕐 Otomasyon Tetikleyicisi (Zamanlayıcı)\n\n**Bu düğümün işlevi:**\n- Workflow'u her 10 dakikada bir otomatik olarak çalıştırır\n- Belirli zaman aralıklarında haber kontrolü yapar\n- Sürekli güncel haber akışı sağlar\n\n**Nasıl yapılandırılır:**\n1. Düğüme çift tıklayın\n2. Trigger Times bölümünde zaman aralığını ayarlayın\n3. Mode: 'Every X' seçin\n4. Value: İstediğiniz sayıyı girin (örn: 10)\n5. Unit: Zaman birimini seçin (minutes, hours, days)\n\n**Önerilen ayarlar:**\n- Yoğun haber siteleri için: 5-10 dakika\n- Normal kullanım için: 30 dakika - 1 saat\n- Az güncellenenen kaynaklar için: 2-6 saat\n\n---\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n## 🕐 Automation Trigger (Scheduler)\n\n**This node's function:**\n- Automatically runs the workflow every 10 minutes\n- Performs news checks at specific intervals\n- Ensures continuous updated news flow\n\n**How to configure:**\n1. Double-click on the node\n2. Set time interval in Trigger Times section\n3. Mode: Select 'Every X'\n4. Value: Enter desired number (e.g., 10)\n5. Unit: Choose time unit (minutes, hours, days)\n\n**Recommended settings:**\n- For high-frequency news sites: 5-10 minutes\n- For normal usage: 30 minutes - 1 hour\n- For less frequently updated sources: 2-6 hours",
+        "height": 1344,
+        "width": 464,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -3696,
+        -496
+      ],
+      "typeVersion": 1,
+      "id": "571b966a-08e0-48e4-8d83-6571c51c467c",
+      "name": "Step 1: Scheduler"
+    },
+    {
+      "parameters": {
+        "content": "\n\n\n## 📡 RSS Haber Kaynakları\n\n**Bu düğümlerin işlevi:**\n- RSS feed'lerinden haber verilerini çeker\n- Farklı kategorilerden haberleri ayrı ayrı işler\n- JSON formatında yapılandırılmış veri sağlar\n\n**Nasıl yapılandırılır:**\n1. RSS Feed Read düğümüne çift tıklayın\n2. URL alanına RSS feed adresini girin\n3. Options bölümünden ek ayarları yapın\n\n**Örnek RSS kaynakları:**\n\n- https://bakinazik.github.io/rss/\n\n**Önemli notlar:**\n- Her RSS kaynağı için ayrı düğüm kullanın\n- RSS URL'lerinin aktif olduğunu kontrol edin\n- Telif hakları konusunda dikkatli olun\n\n---\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n## 📡 RSS News Sources\n\n**These nodes' function:**\n- Fetch news data from RSS feeds\n- Process news from different categories separately\n- Provide structured data in JSON format\n\n**How to configure:**\n1. Double-click on RSS Feed Read node\n2. Enter RSS feed URL in URL field\n3. Configure additional settings in Options section\n\n**Example RSS sources:**\n\n- https://feeds.bbci.co.uk/rss.xml\n\n**Important notes:**\n- Use separate nodes for each RSS source\n- Verify that RSS URLs are active\n- Be careful about copyright issues",
+        "height": 1424,
+        "width": 432,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -3184,
+        -544
+      ],
+      "typeVersion": 1,
+      "id": "d503160e-8d99-4d30-9f7b-6d9a9bbe8598",
+      "name": "Step 2: RSS Sources"
+    },
+    {
+      "parameters": {
+        "content": "\n\n\n## 🔄 Haber Birleştirme ve İşleme\n\n**Bu düğümün işlevi:**\n- Farklı RSS kaynaklarından gelen haberleri birleştirir\n- Tüm haber verilerini tek bir akışta toplar\n- Sonraki işlem adımlarına hazırlar\n\n**Nasıl çalışır:**\n1. Merge node, gelen tüm veriyi birleştirir\n2. Farklı kaynaklardan haberleri senkronize eder\n3. Veri formatını standardize eder\n\n**Ayarlamaya gerek yok:**\n- Bu düğüm otomatik olarak çalışır\n- Manuel konfigürasyon gerektirmez\n- Input sayısını düğüme çift tıklayarak \"Number of Inputs\" seçeneğinden düzenleyebilirsiniz \n\n**Veri akışı:**\n- Input: Birden fazla RSS kaynağı\n- Process: Veri birleştirme\n- Output: Birleştirilmiş haber listesi\n\n---\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n## 🔄 News Merging and Processing\n\n**This node's function:**\n- Merges news from different RSS sources\n- Collects all news data in a single flow\n- Prepares for next processing steps\n\n**How it works:**\n1. Merge node combines all incoming data\n2. Synchronizes news from different sources\n3. Standardizes data format\n\n**No configuration needed:**\n- This node works automatically\n- No manual configuration required\n- Just ensure connections are correct\n\n**Data flow:**\n- Input: Multiple RSS sources\n- Process: Data merging\n- Output: Combined news list",
+        "height": 1456,
+        "width": 464,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -2704,
+        -560
+      ],
+      "typeVersion": 1,
+      "id": "8d429a68-33bd-4543-82da-8f9578ac0352",
+      "name": "Step 3: Data Merging"
+    },
+    {
+      "parameters": {
+        "content": "\n\n\n## 🔍 Tekrar Kontrol Sistemi\n\n**Bu düğümün işlevi:**\n- Daha önce gönderilmiş haberleri tespit eder\n- Aynı haberin birden fazla gönderilmesini engeller\n- Global static data kullanarak kalıcı hafıza sağlar\n\n**Kod açıklaması:**\n```javascript\n// Global veri deposu oluştur\nconst staticData = this.getWorkflowStaticData('global');\nstaticData.sentLinks = staticData.sentLinks || [];\n\n// Daha önce gönderilenleri filtrele\nitems = items.filter(item => {\n  if (staticData.sentLinks.includes(item.json.link)) {\n    return false; // Zaten gönderilmiş\n  }\n  staticData.sentLinks.push(item.json.link);\n  return true; // Yeni haber\n});\n```\n\n**Önemli özellikler:**\n- Kalıcı veri depolama\n- Otomatik tekrar engelleme\n- Hafıza temizliği (isteğe bağlı)\n\n---\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n## 🔍 Duplicate Detection System\n\n**This node's function:**\n- Detects previously sent news\n- Prevents sending the same news multiple times\n- Uses global static data for persistent memory\n\n**Code explanation:**\n```javascript\n// Create global data storage\nconst staticData = this.getWorkflowStaticData('global');\nstaticData.sentLinks = staticData.sentLinks || [];\n\n// Filter out previously sent items\nitems = items.filter(item => {\n  if (staticData.sentLinks.includes(item.json.link)) {\n    return false; // Already sent\n  }\n  staticData.sentLinks.push(item.json.link);\n  return true; // New news\n});\n```\n\n**Key features:**\n- Persistent data storage\n- Automatic duplicate prevention\n- Memory cleanup (optional)",
+        "height": 1584,
+        "width": 416,
+        "color": 2
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -2192,
+        -624
+      ],
+      "typeVersion": 1,
+      "id": "4d35d59a-ec8b-40e1-9e91-f50517fa89f7",
+      "name": "Step 4: Duplicate Check"
+    },
+    {
+      "parameters": {
+        "content": "\n\n\n## 📱 Telegram Mesaj Gönderimi\n\n**Bu düğümün işlevi:**\n- Filtrelenmiş haberleri Telegram'a gönderir\n- Resim ve metin içeriğini birlikte paylaşır\n- Özelleştirilmiş mesaj formatı kullanır\n\n**Yapılandırma adımları:**\n1. **Telegram Bot oluşturun:**\n   - @BotFather'a mesaj atın\n   - /newbot komutunu kullanın\n   - Bot token'ınızı kaydedin\n\n2. **Chat ID bulun:**\n   - Botunuza mesaj gönderin\n   - https://api.telegram.org/bot<TOKEN>/getUpdates adresini ziyaret edin\n   - Chat ID'yi kopyalayın\n\n3. **n8n'de yapılandırın:**\n   - Credentials bölümüne bot token'ı girin\n   - Chat ID alanını doldurun\n   - Mesaj formatını özelleştirin\n\n**Mesaj formatı:**\n- Başlık: Haberin ana başlığı\n- Özet: Kısa açıklama\n- Link: Haber detay linki\n- Hashtag: Kategori etiketi\n\n**Güvenlik notları:**\n- Bot token'ını güvenli saklayın\n- Chat ID'yi doğru girin\n- Rate limit'lere dikkat edin\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n---\n\n## 📱 Telegram Message Sending\n\n**This node's function:**\n- Sends filtered news to Telegram\n- Shares image and text content together\n- Uses customized message format\n\n**Configuration steps:**\n1. **Create Telegram Bot:**\n   - Message @BotFather\n   - Use /newbot command\n   - Save your bot token\n\n2. **Find Chat ID:**\n   - Send message to your bot\n   - Visit https://api.telegram.org/bot<TOKEN>/getUpdates\n   - Copy the chat ID\n\n3. **Configure in n8n:**\n   - Enter bot token in Credentials\n   - Fill in Chat ID field\n   - Customize message format\n\n**Message format:**\n- Title: Main news headline\n- Summary: Brief description\n- Link: News detail link\n- Hashtag: Category tag\n\n**Security notes:**\n- Keep bot token secure\n- Enter correct Chat ID\n- Be mindful of rate limits",
+        "height": 1888,
+        "width": 416,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1728,
+        -784
+      ],
+      "typeVersion": 1,
+      "id": "4c6d1cdc-e55d-4ecd-8344-3db2e6e0f0a6",
+      "name": "Step 5: Telegram Sending"
+    },
+    {
+      "parameters": {
+        "url": "(rss url copy here)",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1.2,
+      "position": [
+        -3024,
+        16
+      ],
+      "id": "55056455-63e5-401d-afb2-3c58973183e1",
+      "name": "RSS 1"
+    },
+    {
+      "parameters": {
+        "url": "(rss url copy here)",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1.2,
+      "position": [
+        -3024,
+        224
+      ],
+      "id": "68b76dc9-cf71-4e35-b3f3-906f6f10e13a",
+      "name": "RSS2"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Scheduler": {
+      "main": [
+        [
+          {
+            "node": "RSS 1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "RSS2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Duplicate Check": {
+      "main": [
+        [
+          {
+            "node": "Send to Telegram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "News Merger": {
+      "main": [
+        [
+          {
+            "node": "Duplicate Check",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RSS 1": {
+      "main": [
+        [
+          {
+            "node": "News Merger",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RSS2": {
+      "main": [
+        [
+          {
+            "node": "News Merger",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "6e4ed8aa-ba13-4f88-a0d8-e84fb4ee883e",
+  "meta": {
+    "instanceId": "b58da4963f31c57041cfe305730d88ab3db284a178f96b076190a7b315f7421f"
+  },
+  "id": "qns9o4QZQ5sQSor9",
+  "tags": []
+}
