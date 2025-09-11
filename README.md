@@ -4,6 +4,15 @@ Bu proje, **n8n** kullanarak birden fazla RSS kaynağından haberleri toplayıp 
 Amaç: Belirli aralıklarla güncellenen haberleri, otomatik ve düzenli bir şekilde Telegram grubuna/kanalına iletmektir.
 
 ---
+# 📡 RSS to Telegram Otomasyonu (n8n Workflow)
+
+🌐 **Dil Seçimi:** [Türkçe](README.md) | [English](README.en.md)
+
+---
+
+Bu proje, **n8n** otomasyon platformunu kullanarak birden fazla RSS kaynağından haberleri toplayıp bir **Telegram botu** aracılığıyla otomatik olarak paylaşır.
+
+...
 
 ## 🚀 Özellikler
 - Birden fazla RSS kaynağını destekler
