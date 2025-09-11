@@ -19,5 +19,3 @@ Bu projeye katkıda bulunmak istediğiniz için teşekkürler! 🚀
 - Yeni RSS kaynak desteği ekleme
 - Telegram mesaj formatını geliştirme
 - Daha fazla dil desteği
-
-- Destekleyen herkese teşekkürler
